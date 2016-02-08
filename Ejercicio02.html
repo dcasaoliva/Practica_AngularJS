@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+    <p>Cambia los datos por defecto del jugador.</p>
+
+    <div ng-app="Ligabaloncesto" ng-controller="jugadorCtrl">
+
+        Nombre: <input type="text" ng-model="nombre"><br>
+        Apellidos: <input type="text" ng-model="apellidos"><br>
+    <br>
+    Nombre completo: {{nombre + " " + apellidos}}
+
+    </div>
+
+    <script>
+    var app = angular.module('Ligabaloncesto', []);
+    app.controller('jugadorCtrl', function($scope) {
+        $scope.nombre= "David";
+        $scope.apellidos= "Casaoliva Rey";
+    });
+    </script>
+
+</body>
+</html>

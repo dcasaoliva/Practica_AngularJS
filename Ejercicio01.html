@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+    <div ng-app="">
+ 
+    <p>Introduce los datos del jugador:</p>
+    <p>Nombre : <input type="text" ng-model="nombre"></p>
+    <p>Apellidos : <input type="text" ng-model="apellidos"></p>
+    <p>País : <input type="text" ng-model="pais"></p>
+    <p>Posición en el campo : <input type="text" ng-model="posicion"></p>
+    <p>{{"Nombre y apellidos del jugador : " + nombre +" "+ apellidos}}</p>
+    <p>{{"País de origen del jugador : " + pais}}</p>
+    <p>{{"Posición en el campo : " + posicion}}</p>
+
+</div>
+
+</body>
+</html>

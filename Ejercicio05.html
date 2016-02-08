@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="LigaBaloncesto" ng-controller="jugadoresCtrl">
+
+<p>Lista de jugadores de un equipo :</p>
+<ul>
+  <li ng-repeat="x in jugadores | orderBy:'pais'">
+    {{ x.nombre + ', ' + x.pais + ', ' + x.posicion }}
+  </li>
+</ul>
+
+</div>
+
+<script>
+angular.module('LigaBaloncesto', []).controller('jugadoresCtrl', function($scope) {
+    $scope.jugadores = [
+        {nombre:'Joe',pais:'Norway',posicion:'Centro'},
+        {nombre:'John',pais:'Sweden',posicion:'Base'},
+        {nombre:'Gustav',pais:'England',posicion:'Alero'},
+        {nombre:'Javier',pais:'Norway',posicion:'Pivot'},
+        {nombre:'Pedro',pais:'Denmark',posicion:'Defensa'},
+        {nombre:'Carlos',pais:'Sweden',posicion:'Pivot'},
+        ];
+});
+</script>
+
+</body>
+</html>
