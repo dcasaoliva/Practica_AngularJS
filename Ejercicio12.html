@@ -10,10 +10,10 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <body>
 
-<div ng-app="ligabaloncestoV03" ng-controller="equiposCtrl" ng-init="localidad==='Barcelona'>
+<div ng-app="ligabaloncestoV03" ng-controller="equiposCtrl">
 
-    <table ng-show="localidad==='Barcelona'">
-        <tr ng-repeat="x in equipos">
+    <table>
+        <tr ng-repeat="x in equipos" ng-show="x.localidad =='Madrid'">
             <td ng-if="$odd" style="background-color:#f1f1f1">
                 {{ x.nombreEquipo }}</td>
             <td ng-if="$even">
@@ -35,7 +35,7 @@
     var app = angular.module('ligabaloncestoV03', []);
     app.controller('equiposCtrl', function ($scope, $http) {
         $http.get("api/equipos").then(function (response) {
-            $scope.equipo = response.data;
+            $scope.equipos = response.data;
         });
     });
 </script>
